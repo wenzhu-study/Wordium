@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c0c0f" />
+    <meta name="description" content="Wordium 文案库 - 发现并收藏朋友圈、EMO、抽象、疯狂星期四等各类文案。" />
+    <title>Wordium 文案库</title>
+    <script type="module" crossorigin src="/assets/index-CI5-dlbY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BU9FT7G2.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="ambient ambient-a" aria-hidden="true"></div>
+      <div class="ambient ambient-b" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="header-inner glass-panel">
+          <a class="brand" href="#" aria-label="Wordium 首页">
+            <span class="brand-mark">W</span>
+            <span class="brand-name">Wordium</span>
+            <span class="brand-tag">文案库</span>
+          </a>
+
+          <div class="header-tools">
+            <label class="search-field" for="search-input">
+              <i data-lucide="search" aria-hidden="true"></i>
+              <input id="search-input" type="search" placeholder="搜索文案或标签" autocomplete="off" />
+              <kbd class="search-shortcut">/</kbd>
+            </label>
+            <button class="icon-button theme-button" type="button" aria-label="切换主题" data-tooltip="切换主题">
+              <i data-lucide="sun" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro-section">
+          <div class="intro-copy">
+            <p class="eyebrow"><span></span> WORDS FOR EVERY MOOD</p>
+            <h1>今天，想说点什么？</h1>
+            <p class="intro-description">收集那些恰好替你表达的句子。</p>
+          </div>
+          <button class="random-button" type="button">
+            <i data-lucide="shuffle" aria-hidden="true"></i>
+            <span>随机来一句</span>
+          </button>
+        </section>
+
+        <section class="category-strip" aria-label="文案分类">
+          <div class="category-scroll" id="category-scroll"></div>
+        </section>
+
+        <section class="content-section">
+          <aside class="filter-rail" aria-label="内容筛选">
+            <div class="rail-block">
+              <p class="rail-label">浏览</p>
+              <button class="rail-item active" type="button" data-view="all">
+                <i data-lucide="sparkles" aria-hidden="true"></i>
+                <span>全部灵感</span>
+                <b id="all-count">0</b>
+              </button>
+              <button class="rail-item" type="button" data-view="favorites">
+                <i data-lucide="heart" aria-hidden="true"></i>
+                <span>我的收藏</span>
+                <b id="favorite-count">0</b>
+              </button>
+            </div>
+
+            <div class="rail-block rail-trending">
+              <p class="rail-label">热门标签</p>
+              <div class="trending-tags" id="trending-tags"></div>
+            </div>
+
+            <div class="rail-note">
+              <i data-lucide="quote" aria-hidden="true"></i>
+              <p>语言的边界，<br />就是世界的边界。</p>
+              <span>L. Wittgenstein</span>
+            </div>
+          </aside>
+
+          <div class="feed">
+            <div class="feed-header">
+              <div>
+                <p class="feed-kicker" id="feed-kicker">CURATED FOR YOU</p>
+                <h2 id="feed-title">全部灵感</h2>
+                <p class="feed-description" id="feed-description"></p>
+              </div>
+              <div class="feed-meta"><span id="result-count">0</span> 条文案</div>
+            </div>
+
+            <div class="copy-grid" id="copy-grid" aria-live="polite"></div>
+
+            <div class="empty-state" id="empty-state" hidden>
+              <span class="empty-icon"><i data-lucide="search-x" aria-hidden="true"></i></span>
+              <h3>没有找到合适的句子</h3>
+              <p>换个关键词，也许灵感就在下一页。</p>
+              <button type="button" id="clear-filter">清除筛选</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-inner">
+          <a class="brand footer-brand" href="#"><span class="brand-mark">W</span><span class="brand-name">Wordium</span></a>
+          <p>把值得说的话，留在手边。</p>
+          <span>© 2026 Wordium</span>
+        </div>
+      </footer>
+
+      <nav class="mobile-dock glass-panel" aria-label="快捷操作">
+        <button class="dock-item active" type="button" data-mobile-view="all" aria-label="全部灵感"><i data-lucide="house" aria-hidden="true"></i><span>首页</span></button>
+        <button class="dock-item" type="button" data-mobile-random aria-label="随机文案"><i data-lucide="shuffle" aria-hidden="true"></i><span>随机</span></button>
+        <button class="dock-item" type="button" data-mobile-view="favorites" aria-label="我的收藏"><i data-lucide="heart" aria-hidden="true"></i><span>收藏</span></button>
+      </nav>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast-icon"><i data-lucide="check" aria-hidden="true"></i></span>
+        <span>已复制到剪贴板</span>
+      </div>
+    </div>
+  </body>
+</html>
