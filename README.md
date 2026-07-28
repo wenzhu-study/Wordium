@@ -108,3 +108,7 @@ pnpm preview
 ```
 
 生产文件会生成到根目录下的 `dist/`。部署静态网站时，将该目录设置为输出目录即可。
+
+## 素材来源
+
+页面背景使用 [Pixelbuddha Studio 的黑色纸张纹理摄影](https://unsplash.com/photos/LHiYkrRC77M)，按 Unsplash License 免费使用。

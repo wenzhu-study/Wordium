@@ -14,6 +14,10 @@
   --accent: #c8dda1;
   --accent-ink: #11150c;
   --shadow: 0 18px 54px rgba(0, 0, 0, 0.3);
+  --backdrop-opacity: 0.56;
+  --backdrop-overlay: rgba(7, 8, 8, 0.52);
+  --backdrop-filter: contrast(1.08) brightness(0.78) saturate(0.72);
+  --ambient-opacity: 0.09;
   --radius: 8px;
   --font-cn: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
   --font-latin: "SF Pro Text", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -37,6 +41,10 @@
   --accent: #5e851e;
   --accent-ink: #f7faef;
   --shadow: 0 20px 60px rgba(53, 51, 44, 0.12);
+  --backdrop-opacity: 0.18;
+  --backdrop-overlay: rgba(238, 238, 240, 0.78);
+  --backdrop-filter: grayscale(1) contrast(0.9) brightness(1.24);
+  --ambient-opacity: 0.055;
 }
 
 * {
@@ -59,6 +67,35 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   transition: background-color 240ms ease, color 240ms ease;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+#app::before,
+#app::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+#app::before {
+  z-index: -3;
+  background: url("/assets/wordium-paper-texture.webp") 45% top / cover no-repeat;
+  filter: var(--backdrop-filter);
+  opacity: var(--backdrop-opacity);
+  transform: scale(1.015);
+  transition: filter 240ms ease, opacity 240ms ease;
+}
+
+#app::after {
+  z-index: -2;
+  background: var(--backdrop-overlay);
+  transition: background-color 240ms ease;
 }
 
 button,
@@ -95,10 +132,10 @@ input:focus-visible,
 
 .ambient {
   position: fixed;
-  z-index: -2;
+  z-index: -1;
   width: min(62vw, 980px);
   height: 260px;
-  opacity: 0.045;
+  opacity: var(--ambient-opacity);
   filter: blur(160px);
   pointer-events: none;
   transform: rotate(-12deg);
