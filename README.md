@@ -10,7 +10,7 @@ Wordium 是一个面向日常表达场景的中文文案收藏与检索网站。
 
 ### 桌面端
 
-![Wordium 桌面端界面](./Wordium/docs/images/wordium-desktop.png)
+![Wordium 桌面端界面](./docs/images/wordium-desktop.png)
 
 桌面端默认采用深色主题，以近黑色背景、浅绿色强调色、细边框和轻微玻璃质感构成安静、克制的视觉风格。页面从上到下分为：
 
@@ -25,7 +25,7 @@ Wordium 是一个面向日常表达场景的中文文案收藏与检索网站。
 ### 移动端
 
 <p align="center">
-  <img src="./Wordium/docs/images/wordium-mobile.png" width="390" alt="Wordium 移动端界面" />
+  <img src="./docs/images/wordium-mobile.png" width="390" alt="Wordium 移动端界面" />
 </p>
 
 移动端会压缩顶栏，将搜索与随机操作收纳为图标按钮；分类栏支持横向滑动，文案卡片在窄屏下变为单列。页面底部固定“首页、随机、收藏”导航，方便单手操作。
@@ -69,7 +69,7 @@ Wordium 是一个面向日常表达场景的中文文案收藏与检索网站。
 ## 项目结构
 
 ```text
-Wordium/
+.
 ├── index.html                  # 页面结构与基础语义
 ├── package.json                # 项目依赖和脚本
 ├── public/                     # 公共静态资源
@@ -94,7 +94,6 @@ Wordium/
 请先安装 Node.js 和 pnpm，然后在仓库根目录执行：
 
 ```bash
-cd Wordium
 pnpm install
 pnpm dev
 ```
@@ -104,9 +103,8 @@ pnpm dev
 ## 构建与预览
 
 ```bash
-cd Wordium
 pnpm build
 pnpm preview
 ```
 
-生产文件会生成到 `Wordium/dist/` 目录。部署静态网站时，将该目录设置为输出目录即可。
+生产文件会生成到根目录下的 `dist/`。部署静态网站时，将该目录设置为输出目录即可。
